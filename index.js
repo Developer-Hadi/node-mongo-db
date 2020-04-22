@@ -35,10 +35,10 @@ app.get('/products', (req, res) => {
 });
 
 //Orders
-app.get('/orders', (req, res) => {
+app.get('/Orders', (req, res) => {
     client = new MongoClient(uri, { useNewUrlParser: true});
     client.connect(err => {
-        const collection = client.db("onlineStore").collection("orders");
+        const collection = client.db("onlineStore").collection("Orders");
         collection.find().toArray((err, documents) => {
            if(err){
                console.log(err);
